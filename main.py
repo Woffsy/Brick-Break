@@ -12,8 +12,10 @@ clock = pg.time.Clock()
 def main():
     running = True
     
+    baller=[]
     paddle = Paddle()
-    
+    ball = Baller(VINDU_BREDDE/2,VINDU_HOYDE-60,baller,vindu)
+    baller.append(ball)
     
     while running:
         for event in pg.event.get():
@@ -29,9 +31,11 @@ def main():
             paddle.x += 5
 
         vindu.fill(WHITE)
+
         
         paddle.tegnSelv(vindu)
-        
+        oppdaterAlleBaller(baller)
+
         pg.display.flip()
         clock.tick(FPS)
         

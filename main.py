@@ -6,7 +6,7 @@ from klosser import *
 
 pg.init()
 
-vindu = pg.display.set_mode((VINDU_BREDDE, VINDU_HOYDE), pg.RESIZABLE)
+vindu = pg.display.set_mode((VINDU_BREDDE, VINDU_HOYDE))
 clock = pg.time.Clock()
 
 def main():
@@ -23,9 +23,9 @@ def main():
                 running = False
 
         keys = pg.key.get_pressed()
-        if keys[pg.K_LEFT]:
+        if keys[pg.K_LEFT] and paddle.x>0:
             paddle.x -= 5
-        if keys[pg.K_RIGHT]:
+        if keys[pg.K_RIGHT] and paddle.x+paddle.bredde<VINDU_BREDDE:
             paddle.x += 5
 
         vindu.fill(WHITE)

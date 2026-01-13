@@ -9,14 +9,16 @@ class Baller:
         self.x=x
         self.y=y
         self.fart=5
-        self.vinkel=randint(-80,80)
+        self.vinkel=randint(-80,80)/180*np.pi
         self.vx=np.sin(self.vinkel)*5
-        self.vy=np.cos(self.vinkel)*5
+        self.vy=-np.cos(self.vinkel)*5
         self.baller=baller
         self.vindu=vindu
+        baller.append(self)
     
     def kill(self):
         self.baller.remove(self)
+        
         
 
     def oppdater(self):

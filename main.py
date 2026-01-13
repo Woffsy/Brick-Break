@@ -14,9 +14,10 @@ def main():
     
     baller=[]
     paddle = Paddle()
+
     ball = Baller(VINDU_BREDDE/2,VINDU_HOYDE-60,baller,vindu)
-    baller.append(ball)
-    
+
+
     while running:
         for event in pg.event.get():
             if event.type == pg.QUIT:

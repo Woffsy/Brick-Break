@@ -1,5 +1,8 @@
 import pygame as pg 
 from konstanter import *
+from paddle import *
+from baller import *
+from klosser import *
 
 pg.init()
 

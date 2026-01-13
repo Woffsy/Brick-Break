@@ -15,7 +15,7 @@ def main():
     baller=[]
     paddle = Paddle()
 
-    ball = Baller(VINDU_BREDDE/2,VINDU_HOYDE-60,baller,vindu)
+    ball = Baller(VINDU_BREDDE/2,VINDU_HOYDE-62,baller,vindu)
 
 
     while running:
@@ -36,6 +36,7 @@ def main():
         
         paddle.tegnSelv(vindu)
         oppdaterAlleBaller(baller)
+        ball.sjekkKollisjon(paddle)
 
         pg.display.flip()
         clock.tick(FPS)

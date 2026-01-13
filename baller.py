@@ -33,7 +33,11 @@ class Baller:
         pg.draw.circle(self.vindu,BLACK,(self.x,self.y),self.størrelse)
         
         
-        
+    def sjekkKollisjon(self, paddle):
+        if self.x > paddle.x and self.x < paddle.x + paddle.bredde and self.y + self.størrelse >= paddle.y:
+            self.vy*=-1
+            self.y = paddle.y - self.størrelse - 2
+            print("kollisjon")
 
         
         

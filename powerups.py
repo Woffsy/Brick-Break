@@ -26,16 +26,7 @@ class PowerUp:
 def spawnPowerUp(kloss, powerUps: list):
     powerUpType = choice(powerUpTypes)
     
-    if powerUpType == "dobbelDamage":
-        powerUps.append(PowerUp(powerUpType, kloss))
-        
-    
-    elif powerUpType == "dobbelBall":
-        powerUps.append(PowerUp(powerUpType, kloss))
-
-    
-    elif powerUpType == "spøkelse":
-        powerUps.append(PowerUp(powerUpType, kloss))
+    powerUps.append(PowerUp(powerUpType, kloss))
 
 
 def oppdaterPowerUps(powerUps: list, vindu):

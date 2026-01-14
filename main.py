@@ -16,7 +16,7 @@ def main():
     paddle = Paddle()
     
 
-    ball = Baller(VINDU_BREDDE/2,VINDU_HOYDE-62,baller,vindu)
+    ball = Ball(VINDU_BREDDE/2,VINDU_HOYDE-62,baller,vindu)
 
 
     while running:
@@ -25,7 +25,7 @@ def main():
                 running = False
             elif event.type == pg.KEYDOWN and event.key == pg.K_ESCAPE:
                 running = False
-            elif event.type == pg.KEYDOWN and event.key == pg.K_SPACE:
+            elif event.type == pg.MOUSEBUTTONDOWN:
                 spawnBall(baller,paddle.x+paddle.bredde/2,paddle.y-12,vindu)
 
         keys = pg.key.get_pressed()

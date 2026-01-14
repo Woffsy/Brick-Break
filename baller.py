@@ -3,7 +3,7 @@ from random import randint
 import pygame as pg
 import numpy as np
 
-class Baller:
+class Ball:
     def __init__(self,x,y,baller:list,vindu):
         self.størrelse=10
         self.x=x
@@ -49,7 +49,7 @@ class Baller:
         
         
 def spawnBall(baller:list, x, y, vindu):
-    newBall = Baller(x, y, baller, vindu)
+    Ball(x, y, baller, vindu)
 
 def oppdaterAlleBaller(baller:list,paddle):
     for b in baller:

@@ -35,7 +35,7 @@ class Baller:
         
         
     def sjekkKollisjon(self, paddle):
-        if pg.Rect(self.x - self.størrelse, self.y - self.størrelse, self.størrelse * 2, self.størrelse * 2).colliderect(pg.Rect(paddle.x, 1, paddle.bredde, paddle.hoyde)):
+        if pg.Rect(self.x - self.størrelse, self.y - self.størrelse, self.størrelse * 2, self.størrelse * 2).colliderect(pg.Rect(paddle.x, paddle.y, paddle.bredde, 1)):
             self.vy*=-1
             self.y = paddle.y - self.størrelse - 2
             

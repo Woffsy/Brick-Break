@@ -47,7 +47,7 @@ class Baller:
         
         
 def spawnBall(baller:list, x, y, vindu):
-    new_ball = Baller(x, y, baller, vindu)
+    newBall = Baller(x, y, baller, vindu)
 
 def oppdaterAlleBaller(baller:list,paddle):
     for b in baller:

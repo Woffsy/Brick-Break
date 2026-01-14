@@ -13,7 +13,7 @@ class PowerUp:
         self.radius = 10
         
         self.powerUpType = powerUpType
-        self.color = POWERUPFARGER[powerUpType]
+        self.color = POWERUPFARGER[powerUpType] # type: ignore
         
         
 

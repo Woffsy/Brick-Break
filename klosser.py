@@ -1,4 +1,5 @@
 import pygame as pg
+from baller import *
 from konstanter import *
 
 class Kloss:
@@ -6,7 +7,13 @@ class Kloss:
         self.vindu = vindu
         
         self.posisjoner = posisjoner
-        
+        self.kant={
+            "venstre": self.posisjoner[0][0],
+            "høyre": self.posisjoner[0][0]+self.posisjoner[0][2],
+            "top": self.posisjoner[0][1],
+            "bunn": self.posisjoner[0][1]+self.posisjoner[0][3]
+        }
+
         self.health = 3
         self.color = KLOSSFARGER[self.health-1]
         
@@ -23,9 +30,17 @@ class Kloss:
         self.image.fill(self.color)
         pg.draw.rect(self.image, (0, 0, 0), self.image.get_rect(), 2)
         
-    def sjekkKollisjon(self, ball):
-        if pg.Rect(self.rect).colliderect(pg.Rect(ball.x, ball.y, ball.størrelse, ball.størrelse)):
-            ball.vy *= -1
+    def sjekkKollisjon(self, ball:Ball):
+        nå=pg.time.get_ticks()
+        if pg.Rect(self.rect).colliderect(pg.Rect(ball.x-ball.størrelse, ball.y-ball.størrelse, ball.størrelse*2, ball.størrelse*2)):
+            if min(abs(ball.y-ball.størrelse-self.kant["bunn"]), abs(self.kant["top"]-ball.y-ball.størrelse)) < min(abs(ball.x-self.kant["høyre"]-ball.størrelse), abs(self.kant["venstre"]-ball.x-ball.størrelse)):
+                if nå-ball.sisteSprettY>=ball.sprettCooldown:
+                    ball.vy *= -1
+                    ball.sisteSprettY=nå
+            else:
+                if nå-ball.sisteSprettX>=ball.sprettCooldown:
+                    ball.vx *= -1
+                    ball.sisteSprettX=nå
             self.health -= 1
             self.color = KLOSSFARGER[self.health-1]
             self.tegn_bilde()

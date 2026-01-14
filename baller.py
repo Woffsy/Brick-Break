@@ -15,6 +15,9 @@ class Ball:
         self.baller=baller
         self.vindu=vindu
         self.farge=BALLFARGE
+        self.sprettCooldown=2
+        self.sisteSprettX=0
+        self.sisteSprettY=0
         baller.append(self)
 
     

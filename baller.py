@@ -21,7 +21,7 @@ class Baller:
         
         
 
-    def oppdater(self):
+    def oppdater(self,paddle):
         self.x+=self.vx
         self.y+=self.vy
         if self.x-self.størrelse<=0 or self.x+self.størrelse>=VINDU_BREDDE:
@@ -31,6 +31,7 @@ class Baller:
         if self.y-self.størrelse>VINDU_HOYDE:
             self.kill()
         pg.draw.circle(self.vindu,BLACK,(self.x,self.y),self.størrelse)
+        self.sjekkKollisjon(paddle)
         
         
     def sjekkKollisjon(self, paddle):
@@ -45,12 +46,12 @@ class Baller:
             print(f"lengde fra sentrum {(paddle.x+paddle.bredde/2-self.x)*-1}")
         
         
-def spawnBall(baller:list):
-    pass
+def spawnBall(baller:list, x, y, vindu):
+    new_ball = Baller(x, y, baller, vindu)
 
-def oppdaterAlleBaller(baller:list):
+def oppdaterAlleBaller(baller:list,paddle):
     for b in baller:
-        b.oppdater()
+        b.oppdater(paddle)
 
 
 

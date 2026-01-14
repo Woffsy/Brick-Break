@@ -38,7 +38,7 @@ def main():
         if keys[pg.K_RIGHT] and paddle.x+paddle.bredde<VINDU_BREDDE:
             paddle.x += paddle.fart
 
-        vindu.fill(WHITE)
+        vindu.fill(BACKGROUNDFARGE)
 
         
         paddle.tegnSelv(vindu)

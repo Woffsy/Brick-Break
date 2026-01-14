@@ -14,7 +14,9 @@ class Baller:
         self.vy=-np.cos(self.vinkel)*self.fart
         self.baller=baller
         self.vindu=vindu
+        self.farge=BALLFARGE
         baller.append(self)
+
     
     def kill(self):
         self.baller.remove(self)
@@ -30,7 +32,7 @@ class Baller:
             self.vy*=-1
         if self.y-self.størrelse>VINDU_HOYDE:
             self.kill()
-        pg.draw.circle(self.vindu,BLACK,(self.x,self.y),self.størrelse)
+        pg.draw.circle(self.vindu,self.farge,(self.x,self.y),self.størrelse)
         self.sjekkKollisjon(paddle)
         
         
@@ -39,7 +41,7 @@ class Baller:
             self.vy*=-1
             self.y = paddle.y - self.størrelse - 2
             
-            nyvinkel = (paddle.x+paddle.bredde/2-self.x)/180*-np.pi
+            nyvinkel = (paddle.x+paddle.bredde/2-self.x)/180*-np.pi+randint(-100,100)/1000
             self.vx = np.sin(nyvinkel)*self.fart
             self.vy = -np.cos(nyvinkel)*self.fart
 
@@ -47,7 +49,7 @@ class Baller:
         
         
 def spawnBall(baller:list, x, y, vindu):
-    new_ball = Baller(x, y, baller, vindu)
+    newBall = Baller(x, y, baller, vindu)
 
 def oppdaterAlleBaller(baller:list,paddle):
     for b in baller:

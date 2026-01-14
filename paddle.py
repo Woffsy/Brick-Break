@@ -10,7 +10,7 @@ class Paddle():
         
         self.fart = 5
         
-        self.color = BLACK
+        self.color = PADDLEFARGE
         
     def tegnSelv(self, vindu):
         pg.draw.rect(vindu, self.color, (self.x, self.y, self.bredde, self.hoyde))

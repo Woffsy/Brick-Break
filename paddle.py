@@ -8,6 +8,8 @@ class Paddle():
         self.x = VINDU_BREDDE/2-self.bredde/2
         self.y = VINDU_HOYDE-50
         
+        self.fart = 3
+        
         self.color = BLACK
         
     def tegnSelv(self, vindu):

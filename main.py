@@ -27,9 +27,9 @@ def main():
 
         keys = pg.key.get_pressed()
         if keys[pg.K_LEFT] and paddle.x>0:
-            paddle.x -= 5
+            paddle.x -= paddle.fart
         if keys[pg.K_RIGHT] and paddle.x+paddle.bredde<VINDU_BREDDE:
-            paddle.x += 5
+            paddle.x += paddle.fart
 
         vindu.fill(WHITE)
 

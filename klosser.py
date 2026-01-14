@@ -8,7 +8,7 @@ class Kloss:
         self.posisjoner = posisjoner
         
         self.health = 2
-        self.color = KLOSSFARGER
+        self.color = KLOSSFARGER[self.health]
         
         self.klosser = klosser
         self.klosser.append(self)

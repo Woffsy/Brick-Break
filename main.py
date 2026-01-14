@@ -14,6 +14,7 @@ def main():
     
     baller=[]
     paddle = Paddle()
+    
 
     ball = Baller(VINDU_BREDDE/2,VINDU_HOYDE-62,baller,vindu)
 

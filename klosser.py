@@ -14,5 +14,5 @@ class Kloss:
         self.klosser.append(self)
         
     def lagKlosser(self):
-        for kloss in self.klosser:
-            pg.draw.rect(self.vindu, self.color, ())
+        # for kloss in self.klosser:
+        pg.draw.rect(self.vindu, self.color, (50, 50), 80, 30)

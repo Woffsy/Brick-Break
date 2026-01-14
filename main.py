@@ -43,7 +43,7 @@ def main():
         paddle.tegnSelv(vindu)
         oppdaterAlleBaller(baller,paddle)
         
-        oppdaterKloss(klosser, baller)
+        oppdaterKloss(klosser, baller, vindu)
         
 
         pg.display.flip()

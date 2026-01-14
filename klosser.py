@@ -51,7 +51,7 @@ def lagKlosser(klosser: list, vindu):
 
 
 
-def oppdaterKloss(klosser, baller: list):
+def oppdaterKloss(klosser, baller: list, vindu):
     for kloss in klosser:
         if kloss.health > 0:
             kloss.vindu.blit(kloss.image, kloss.rect)
@@ -59,4 +59,8 @@ def oppdaterKloss(klosser, baller: list):
                 kloss.sjekkKollisjon(b)
         else:
             klosser.remove(kloss)
+    if len(klosser) == 0:
+        lagKlosser(klosser, vindu)
+        for ball in baller:
+            ball.fart += 1
             

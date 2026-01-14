@@ -13,13 +13,17 @@ def main():
     running = True
     
     baller=[]
+    klosser = []
     paddle = Paddle()
     
+    lagKlosser(klosser, vindu)
+    print(len(klosser))
 
-    ball = Ball(VINDU_BREDDE/2,VINDU_HOYDE-62,baller,vindu)
+    Ball(VINDU_BREDDE/2,VINDU_HOYDE-62,baller,vindu)
 
-
+    framecounter = 0
     while running:
+        framecounter+=1
         for event in pg.event.get():
             if event.type == pg.QUIT:
                 running = False
@@ -39,6 +43,12 @@ def main():
         
         paddle.tegnSelv(vindu)
         oppdaterAlleBaller(baller,paddle)
+        
+        tegnKlosser(klosser)
+        
+        
+        if framecounter % FPS == 0:
+            print("Antall klosser:", len(klosser)) 
         
 
         pg.display.flip()

@@ -17,7 +17,6 @@ def main():
     paddle = Paddle()
     
     lagKlosser(klosser, vindu)
-    print(len(klosser))
 
     Ball(VINDU_BREDDE/2,VINDU_HOYDE-62,baller,vindu)
 

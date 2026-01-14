@@ -44,8 +44,6 @@ class Ball:
             nyvinkel = (paddle.x+paddle.bredde/2-self.x)/180*-np.pi+randint(-100,100)/1000
             self.vx = np.sin(nyvinkel)*self.fart
             self.vy = -np.cos(nyvinkel)*self.fart
-
-            print(f"lengde fra sentrum {(paddle.x+paddle.bredde/2-self.x)*-1}")
         
         
 def spawnBall(baller:list, x, y, vindu):

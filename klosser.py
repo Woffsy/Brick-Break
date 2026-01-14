@@ -7,8 +7,8 @@ class Kloss:
         
         self.posisjoner = posisjoner
         
-        self.health = 2
-        self.color = KLOSSFARGER[self.health]
+        self.health = 3
+        self.color = KLOSSFARGER[self.health-1]
         
         self.klosser = klosser
         self.klosser.append(self)
@@ -17,13 +17,19 @@ class Kloss:
         
         self.image = pg.Surface((self.rect.width, self.rect.height))
         
-        self.image.fill(self.color)
+        self.tegn_bilde()
         
+    def tegn_bilde(self):
+        self.image.fill(self.color)
         pg.draw.rect(self.image, (0, 0, 0), self.image.get_rect(), 2)
         
-        def sjekkKollisjon(self, ball):
-            if pg.Rect(self.x, self.y, self.width, self.height).colliderect(pg.Rect(ball.x, ball.y, ball.størrelse, ball.størrelse)):
-                pass
+    def sjekkKollisjon(self, ball):
+        if pg.Rect(self.rect).colliderect(pg.Rect(ball.x, ball.y, ball.størrelse, ball.størrelse)):
+            ball.vy *= -1
+            self.health -= 1
+            self.color = KLOSSFARGER[self.health-1]
+            self.tegn_bilde()
+    
         
         
 def lagKlosser(klosser: list, vindu):
@@ -45,7 +51,12 @@ def lagKlosser(klosser: list, vindu):
 
 
 
-def tegnKlosser(klosser):
+def oppdaterKloss(klosser, baller: list):
     for kloss in klosser:
-        if kloss.health >= 0:
+        if kloss.health > 0:
             kloss.vindu.blit(kloss.image, kloss.rect)
+            for b in baller:
+                kloss.sjekkKollisjon(b)
+        else:
+            klosser.remove(kloss)
+            

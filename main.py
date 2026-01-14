@@ -44,11 +44,7 @@ def main():
         paddle.tegnSelv(vindu)
         oppdaterAlleBaller(baller,paddle)
         
-        tegnKlosser(klosser)
-        
-        
-        if framecounter % FPS == 0:
-            print("Antall klosser:", len(klosser)) 
+        oppdaterKloss(klosser, baller)
         
 
         pg.display.flip()

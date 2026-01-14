@@ -3,6 +3,7 @@ from konstanter import *
 from paddle import *
 from baller import *
 from klosser import *
+from powerups import *
 
 pg.init()
 
@@ -22,7 +23,7 @@ def main():
 
     framecounter = 0
     while running:
-        framecounter+=1
+        # framecounter+=1
         for event in pg.event.get():
             if event.type == pg.QUIT:
                 running = False
@@ -45,6 +46,7 @@ def main():
         
         oppdaterKloss(klosser, baller, vindu)
         
+        oppdaterPowerUps(powerUps, vindu)
 
         pg.display.flip()
         clock.tick(FPS)

@@ -1,6 +1,8 @@
 import pygame as pg
 from baller import *
 from konstanter import *
+from powerups import *
+from random import randint
 
 class Kloss:
     def __init__(self, posisjoner: list, klosser: list, vindu) -> None:
@@ -74,6 +76,9 @@ def oppdaterKloss(klosser, baller: list, vindu):
                 kloss.sjekkKollisjon(b)
         else:
             klosser.remove(kloss)
+            if randint(0, 100) > 90:
+                spawnPowerUp(kloss, powerUps)
+            
     if len(klosser) == 0:
         lagKlosser(klosser, vindu)
         for ball in baller:

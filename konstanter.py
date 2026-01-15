@@ -12,4 +12,4 @@ BALLFARGE=(255,255,255)
 BACKGROUNDFARGE=(25,0,51)
 PADDLEFARGE=(235,235,235)
 
-POWERUPFARGER = {"dobbelDamage":(255, 0, 0), "spøkelse":(0, 255, 0), "dobbelBall":(0, 0, 255)}
+POWERUPFARGER = {"instaBreak":(255, 0, 0), "spøkelse":(0, 255, 0), "dobbelBall":(0, 0, 255)}

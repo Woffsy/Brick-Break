@@ -19,7 +19,7 @@ def main():
     paddle = Paddle()
     
     lagKlosser(klosser, vindu)
-
+    
     Ball(VINDU_BREDDE/2,VINDU_HOYDE-62,baller,vindu)
 
     framecounter = 0

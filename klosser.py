@@ -34,23 +34,30 @@ class Kloss:
         
     def sjekkKollisjon(self, ball:Ball):
         nå=pg.time.get_ticks()
-        ball.sisteKloss=self
-        if pg.Rect(self.rect).colliderect(pg.Rect(ball.x-ball.størrelse, ball.y-ball.størrelse, ball.størrelse*2, ball.størrelse*2)):
-            if min(abs(ball.y-ball.størrelse-self.kant["bunn"]), abs(self.kant["top"]-ball.y-ball.størrelse)) < min(abs(ball.x-self.kant["høyre"]-ball.størrelse), abs(self.kant["venstre"]-ball.x-ball.størrelse)):
-                if nå-ball.sisteSprettY>=ball.sprettCooldown:
-                    ball.vy *= -1
-                    ball.sisteSprettY=nå
-            else:
-                if nå-ball.sisteSprettX>=ball.sprettCooldown:
-                    ball.vx *= -1
-                    ball.sisteSprettX=nå
-            if ball.instaBreak == False:
-                self.health -= 1
-                if self.health > 0:
-                    self.color = KLOSSFARGER[self.health-1]
-            if ball.instaBreak == True:
-                self.health = 0
-                ball.instaBreak = False
+        if ball.spøkelse != self:
+            if pg.Rect(self.rect).colliderect(pg.Rect(ball.x-ball.størrelse, ball.y-ball.størrelse, ball.størrelse*2, ball.størrelse*2)):
+                if ball.spøkelse != True:
+                    if min(abs(ball.y-ball.størrelse-self.kant["bunn"]), abs(self.kant["top"]-ball.y-ball.størrelse)) < min(abs(ball.x-self.kant["høyre"]-ball.størrelse), abs(self.kant["venstre"]-ball.x-ball.størrelse)):
+                        if nå-ball.sisteSprettY>=ball.sprettCooldown:
+                            ball.vy *= -1
+                            ball.sisteSprettY=nå
+                    else:
+                        if nå-ball.sisteSprettX>=ball.sprettCooldown:
+                            ball.vx *= -1
+                            ball.sisteSprettX=nå
+                if ball.instaBreak == False:
+                    self.health -= 1
+                    if self.health > 0:
+                        self.color = KLOSSFARGER[self.health-1]
+                if ball.instaBreak == True:
+                    self.health = 0
+                    ball.instaBreak = False
+                if ball.spøkelse==True:
+                    ball.spøkelse = self
+                
+
+
+                
             self.tegn_bilde()
     
         

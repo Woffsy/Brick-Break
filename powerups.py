@@ -30,6 +30,9 @@ class PowerUp:
         if self.powerUpType == "instaBreak":
             for b in baller:
                 instabreak(b)
+        if self.powerUpType == "spøkelse":
+            for b in baller:
+                spøkelse(b)
         
         
         
@@ -52,3 +55,7 @@ def dobbelBall(ball:Ball, baller:list):
 
 def instabreak(ball:Ball):
     ball.instaBreak=True
+
+def spøkelse(ball:Ball):
+    ball.spøkelsestart=pg.time.get_ticks()
+    ball.spøkelse=True

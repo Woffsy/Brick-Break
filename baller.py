@@ -18,7 +18,8 @@ class Ball:
         self.sprettCooldown=2
         self.sisteSprettX=0
         self.sisteSprettY=0
-        self.sisteKloss=None
+        self.spøkelse=False
+        self.spøkelsestart=0
         self.instaBreak=False
         baller.append(self)
 
@@ -42,6 +43,7 @@ class Ball:
         
         
     def sjekkKollisjon(self, paddle):
+        nå=pg.time.get_ticks()
         if pg.Rect(self.x - self.størrelse, self.y - self.størrelse, self.størrelse * 2, self.størrelse * 2).colliderect(pg.Rect(paddle.x, paddle.y, paddle.bredde, 1)):
             self.vy*=-1
             self.y = paddle.y - self.størrelse - 2
@@ -49,6 +51,8 @@ class Ball:
             nyvinkel = (paddle.x+paddle.bredde/2-self.x)/180*-np.pi+randint(-100,100)/1000
             self.vx = np.sin(nyvinkel)*self.fart
             self.vy = -np.cos(nyvinkel)*self.fart
+            if nå-self.spøkelsestart <= SPØKELSESVARIGHET:
+                self.spøkelse = True
         
         
 def spawnBall(baller:list, x, y, vindu):

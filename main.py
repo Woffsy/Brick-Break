@@ -15,6 +15,7 @@ def main():
     
     baller=[]
     klosser = []
+    powerUps = []
     paddle = Paddle()
     
     lagKlosser(klosser, vindu)
@@ -23,7 +24,7 @@ def main():
 
     framecounter = 0
     while running:
-        # framecounter+=1
+        framecounter+=1
         for event in pg.event.get():
             if event.type == pg.QUIT:
                 running = False
@@ -40,14 +41,19 @@ def main():
 
         vindu.fill(BACKGROUNDFARGE)
 
-        
-        paddle.tegnSelv(vindu)
         oppdaterAlleBaller(baller,paddle)
         
-        oppdaterKloss(klosser, baller, vindu)
+        oppdaterKloss(klosser, baller, vindu, powerUps)
         
-        oppdaterPowerUps(powerUps, vindu)
+        
+        paddle.tegnSelv(vindu)
+        paddle.powerUpKollisjon(powerUps, baller)
+        
+        oppdaterPowerUps(powerUps, vindu)     
 
+        if framecounter % FPS == 0:
+            print(len(baller))
+        
         pg.display.flip()
         clock.tick(FPS)
         

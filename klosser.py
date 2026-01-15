@@ -44,7 +44,8 @@ class Kloss:
                     ball.vx *= -1
                     ball.sisteSprettX=nå
             self.health -= 1
-            self.color = KLOSSFARGER[self.health-1]
+            if self.health > 0:
+                self.color = KLOSSFARGER[self.health-1]
             self.tegn_bilde()
     
         
@@ -68,7 +69,7 @@ def lagKlosser(klosser: list, vindu):
 
 
 
-def oppdaterKloss(klosser, baller: list, vindu):
+def oppdaterKloss(klosser, baller: list, vindu, powerUps):
     for kloss in klosser:
         if kloss.health > 0:
             kloss.vindu.blit(kloss.image, kloss.rect)
@@ -77,7 +78,7 @@ def oppdaterKloss(klosser, baller: list, vindu):
         else:
             klosser.remove(kloss)
             if randint(0, 100) > 90:
-                spawnPowerUp(kloss, powerUps)
+                spawnPowerUp(kloss, powerUps) #type: ignore
             
     if len(klosser) == 0:
         lagKlosser(klosser, vindu)

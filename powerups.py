@@ -4,9 +4,9 @@ from klosser import *
 from konstanter import *
 from baller import*
 from main import*
+from paddle import *
 
 powerUpTypes = ["dobbelDamage", "dobbelBall", "spøkelse"]
-powerUps = []
 
 class PowerUp:
     def __init__(self, powerUpType, kloss) -> None:
@@ -24,8 +24,8 @@ class PowerUp:
         pg.draw.circle(vindu, self.color, (self.x, self.y), self.radius)
     
     def powerUp(self, baller:list):
-        if self.type == "dobbelBall":
-            for i in len(baller):
+        if self.powerUpType == "dobbelBall":
+            for i in range(len(baller)):
                 dobbelBall(baller[i],baller)
         
         
@@ -45,4 +45,4 @@ def oppdaterPowerUps(powerUps: list, vindu):
 
 def dobbelBall(ball:Ball, baller:list):
     if len(baller) < 10000:
-        Ball(ball.x, ball.y, baller, vindu)
+        Ball(ball.x, ball.y, baller, ball.vindu)

@@ -53,6 +53,8 @@ class Ball:
             self.vy = -np.cos(nyvinkel)*self.fart
             if nå-self.spøkelsestart <= SPØKELSESVARIGHET:
                 self.spøkelse = True
+            else:
+                self.spøkelse = False
         
         
 def spawnBall(baller:list, x, y, vindu):

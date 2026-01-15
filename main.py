@@ -15,6 +15,7 @@ def main():
     
     baller=[]
     klosser = []
+    powerUps = []
     paddle = Paddle()
     
     lagKlosser(klosser, vindu)
@@ -46,9 +47,9 @@ def main():
         
         oppdaterAlleBaller(baller,paddle)
         
-        oppdaterKloss(klosser, baller, vindu)
+        oppdaterKloss(klosser, baller, vindu, powerUps)
         
-        oppdaterPowerUps(powerUps, vindu, paddle)
+        oppdaterPowerUps(powerUps, vindu)     
 
         pg.display.flip()
         clock.tick(FPS)

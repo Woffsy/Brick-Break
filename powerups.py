@@ -7,7 +7,6 @@ from main import*
 from paddle import *
 
 powerUpTypes = ["dobbelDamage", "dobbelBall", "spøkelse"]
-powerUps = []
 
 class PowerUp:
     def __init__(self, powerUpType, kloss) -> None:
@@ -38,7 +37,7 @@ def spawnPowerUp(kloss, powerUps: list):
     powerUps.append(PowerUp(powerUpType, kloss))
 
 
-def oppdaterPowerUps(powerUps: list, vindu, paddle):
+def oppdaterPowerUps(powerUps: list, vindu):
     for powerUp in powerUps:
         powerUp.y += 2
         powerUp.tegnPowerUp(vindu)

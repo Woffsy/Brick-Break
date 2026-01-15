@@ -68,7 +68,7 @@ def lagKlosser(klosser: list, vindu):
 
 
 
-def oppdaterKloss(klosser, baller: list, vindu):
+def oppdaterKloss(klosser, baller: list, vindu, powerUps):
     for kloss in klosser:
         if kloss.health > 0:
             kloss.vindu.blit(kloss.image, kloss.rect)

@@ -4,6 +4,7 @@ from paddle import *
 from baller import *
 from klosser import *
 from powerups import *
+from score import *
 
 pg.init()
 
@@ -17,6 +18,10 @@ def main():
     klosser = []
     powerUps = []
     paddle = Paddle()
+    
+    poeng = 0
+    
+    pg.display.set_caption("Brick Break")
     
     lagKlosser(klosser, vindu)
 
@@ -43,16 +48,17 @@ def main():
 
         oppdaterAlleBaller(baller,paddle)
         
-        oppdaterKloss(klosser, baller, vindu, powerUps)
-        
+        oppdaterKloss(klosser, baller, vindu, powerUps, poeng)
         
         paddle.tegnSelv(vindu)
         paddle.powerUpKollisjon(powerUps, baller)
         
-        oppdaterPowerUps(powerUps, vindu)     
+        # poengTavle(vindu)
+        
+        oppdaterPowerUps(powerUps, vindu)  
 
-        if framecounter % FPS == 0:
-            print(len(baller))
+        # if framecounter % FPS == 0:
+        #     print(poeng)
         
         pg.display.flip()
         clock.tick(FPS)

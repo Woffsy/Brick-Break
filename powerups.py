@@ -44,4 +44,5 @@ def oppdaterPowerUps(powerUps: list, vindu):
 
 
 def dobbelBall(ball:Ball, baller:list):
-    Ball(ball.x, ball.y, baller, vindu)
+    if len(baller) < 10000:
+        Ball(ball.x, ball.y, baller, vindu)

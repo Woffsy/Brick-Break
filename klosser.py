@@ -44,7 +44,8 @@ class Kloss:
                     ball.vx *= -1
                     ball.sisteSprettX=nå
             self.health -= 1
-            self.color = KLOSSFARGER[self.health-1]
+            if self.health > 0:
+                self.color = KLOSSFARGER[self.health-1]
             self.tegn_bilde()
     
         

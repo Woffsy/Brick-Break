@@ -2,6 +2,8 @@ import pygame as pg
 from random import choice
 from klosser import *
 from konstanter import *
+from baller import*
+from main import*
 from paddle import *
 
 powerUpTypes = ["dobbelDamage", "dobbelBall", "spøkelse"]
@@ -21,6 +23,11 @@ class PowerUp:
 
     def tegnPowerUp(self, vindu):
         pg.draw.circle(vindu, self.color, (self.x, self.y), self.radius)
+    
+    def powerUp(self, baller:list):
+        if self.powerUpType == "dobbelBall":
+            for i in range(len(baller)):
+                dobbelBall(baller[i],baller)
         
         
         
@@ -35,4 +42,7 @@ def oppdaterPowerUps(powerUps: list, vindu, paddle):
     for powerUp in powerUps:
         powerUp.y += 2
         powerUp.tegnPowerUp(vindu)
-        
+
+
+def dobbelBall(ball:Ball, baller:list):
+    Ball(ball.x, ball.y, baller, vindu)

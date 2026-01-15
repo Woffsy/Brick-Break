@@ -77,7 +77,7 @@ def oppdaterKloss(klosser, baller: list, vindu):
         else:
             klosser.remove(kloss)
             if randint(0, 100) > 90:
-                spawnPowerUp(kloss, powerUps)
+                spawnPowerUp(kloss, powerUps) #type: ignore
             
     if len(klosser) == 0:
         lagKlosser(klosser, vindu)

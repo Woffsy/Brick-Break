@@ -2,6 +2,7 @@ import pygame as pg
 from random import choice
 from klosser import *
 from konstanter import *
+from paddle import *
 
 powerUpTypes = ["dobbelDamage", "dobbelBall", "spøkelse"]
 powerUps = []
@@ -30,7 +31,8 @@ def spawnPowerUp(kloss, powerUps: list):
     powerUps.append(PowerUp(powerUpType, kloss))
 
 
-def oppdaterPowerUps(powerUps: list, vindu):
+def oppdaterPowerUps(powerUps: list, vindu, paddle):
     for powerUp in powerUps:
         powerUp.y += 2
         powerUp.tegnPowerUp(vindu)
+        

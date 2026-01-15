@@ -42,11 +42,13 @@ def main():
 
         
         paddle.tegnSelv(vindu)
+        paddle.powerUpKollisjon(powerUps)
+        
         oppdaterAlleBaller(baller,paddle)
         
         oppdaterKloss(klosser, baller, vindu)
         
-        oppdaterPowerUps(powerUps, vindu)
+        oppdaterPowerUps(powerUps, vindu, paddle)
 
         pg.display.flip()
         clock.tick(FPS)

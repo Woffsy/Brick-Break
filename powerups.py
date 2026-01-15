@@ -6,7 +6,7 @@ from baller import*
 from main import*
 from paddle import *
 
-powerUpTypes = ["dobbelDamage", "dobbelBall", "spøkelse"]
+powerUpTypes = ["instaBreak", "dobbelBall", "spøkelse"]
 
 class PowerUp:
     def __init__(self, powerUpType, kloss) -> None:
@@ -27,6 +27,9 @@ class PowerUp:
         if self.powerUpType == "dobbelBall":
             for i in range(len(baller)):
                 dobbelBall(baller[i],baller)
+        if self.powerUpType == "instaBreak":
+            for b in baller:
+                instabreak(b)
         
         
         
@@ -46,3 +49,6 @@ def oppdaterPowerUps(powerUps: list, vindu):
 def dobbelBall(ball:Ball, baller:list):
     if len(baller) < 1000:
         Ball(ball.x, ball.y, baller, ball.vindu)
+
+def instabreak(ball:Ball):
+    ball.instaBreak=True

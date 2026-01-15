@@ -18,6 +18,8 @@ class Ball:
         self.sprettCooldown=2
         self.sisteSprettX=0
         self.sisteSprettY=0
+        self.sisteKloss=None
+        self.instaBreak=False
         baller.append(self)
 
     

@@ -1,6 +1,7 @@
 import pygame as pg
 from random import choice
 from klosser import *
+from konstanter import *
 
 powerUpTypes = ["dobbelDamage", "dobbelBall", "spøkelse"]
 powerUps = []
@@ -13,7 +14,7 @@ class PowerUp:
         self.radius = 10
         
         self.powerUpType = powerUpType
-        self.color = POWERUPFARGER[powerUpType] # type: ignore
+        self.color = POWERUPFARGER[powerUpType]
         
         
 

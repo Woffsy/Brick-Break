@@ -24,7 +24,7 @@ def main():
 
     framecounter = 0
     while running:
-        framecounter+=1
+        # framecounter+=1
         for event in pg.event.get():
             if event.type == pg.QUIT:
                 running = False

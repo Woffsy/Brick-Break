@@ -77,7 +77,7 @@ def oppdaterKloss(klosser, baller: list, vindu, powerUps):
                 kloss.sjekkKollisjon(b)
         else:
             klosser.remove(kloss)
-            if randint(0, 100) > 90:
+            if randint(0, 100) < 25:
                 spawnPowerUp(kloss, powerUps) #type: ignore
             
     if len(klosser) == 0:

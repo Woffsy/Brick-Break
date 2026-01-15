@@ -42,7 +42,7 @@ def main():
 
         
         paddle.tegnSelv(vindu)
-        paddle.powerUpKollisjon(powerUps)
+        paddle.powerUpKollisjon(powerUps, baller)
         
         oppdaterAlleBaller(baller,paddle)
         

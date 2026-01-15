@@ -45,4 +45,4 @@ def oppdaterPowerUps(powerUps: list, vindu, paddle):
 
 
 def dobbelBall(ball:Ball, baller:list):
-    Ball(ball.x, ball.y, baller, vindu)
+    Ball(ball.x, ball.y, baller, ball.vindu)

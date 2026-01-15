@@ -16,8 +16,8 @@ class Paddle():
         pg.draw.rect(vindu, self.color, (self.x, self.y, self.bredde, self.hoyde))
         
     
-    def powerUpKollisjon(self, powerUps: list):
+    def powerUpKollisjon(self, powerUps: list, baller):
         for powerUp in powerUps:
             if self.x < powerUp.x and self.x + self.bredde > powerUp.x and self.y < powerUp.y and self.y + self.hoyde > powerUp.y:
                 powerUps.remove(powerUp)
-                powerUp.powerUp()
+                powerUp.powerUp(baller)

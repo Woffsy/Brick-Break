@@ -48,15 +48,15 @@ def main():
 
         oppdaterAlleBaller(baller,paddle)
         
-        oppdaterKloss(klosser, baller, vindu, powerUps, poeng)
+        poeng = oppdaterKloss(klosser, baller, vindu, powerUps, poeng)
         
         paddle.tegnSelv(vindu)
         paddle.powerUpKollisjon(powerUps, baller)
         
-        # poengTavle(vindu)
-        
         oppdaterPowerUps(powerUps, vindu)  
 
+        tegnPoengTavle(poeng, vindu)
+        
         # if framecounter % FPS == 0:
         #     print(poeng)
         

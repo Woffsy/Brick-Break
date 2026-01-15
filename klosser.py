@@ -3,6 +3,7 @@ from baller import *
 from konstanter import *
 from powerups import *
 from random import randint
+from score import *
 
 class Kloss:
     def __init__(self, posisjoner: list, klosser: list, vindu) -> None:
@@ -91,9 +92,12 @@ def oppdaterKloss(klosser, baller: list, vindu, powerUps, poeng):
             klosser.remove(kloss)
             if randint(0, 100) < 25:
                 spawnPowerUp(kloss, powerUps) #type: ignore
+            return poengTavle(poeng, vindu)
             
     if len(klosser) == 0:
         lagKlosser(klosser, vindu)
         for ball in baller:
             ball.fart += 1
+            
+    return poeng
             

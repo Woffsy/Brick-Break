@@ -49,10 +49,10 @@ def main():
 
         oppdaterAlleBaller(baller,paddle)
         
-        if len(baller) == 0:
-            if liv != 0:
-                spawnBall(baller,paddle.x+paddle.bredde/2,paddle.y-12,vindu)
+        if len(baller) == 0 and liv > 0:
             liv = livTavle(liv, vindu)
+            if liv > 0:
+                spawnBall(baller,paddle.x+paddle.bredde/2,paddle.y-12,vindu)
         
         poeng = oppdaterKloss(klosser, baller, vindu, powerUps, poeng)
         

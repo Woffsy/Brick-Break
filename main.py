@@ -24,7 +24,7 @@ def main():
     
     pg.display.set_caption("Brick Break")
     
-    lagKlosser(klosser, vindu)
+    lagKlosser(klosser, vindu) 
     
     Ball(VINDU_BREDDE/2,VINDU_HOYDE-62,baller,vindu)
 

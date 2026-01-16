@@ -54,7 +54,7 @@ class Kloss:
                     self.health = 0
                     ball.instaBreak = False
                 if ball.spøkelse==True:
-                    ball.spøkelse = self
+                    ball.spøkelse = self #type: ignore
                 
 
 

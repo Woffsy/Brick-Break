@@ -2,6 +2,7 @@ from konstanter import *
 from random import randint
 import pygame as pg
 import numpy as np
+from score import *
 
 class Ball:
     def __init__(self,x,y,baller:list,vindu):

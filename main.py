@@ -20,6 +20,7 @@ def main():
     paddle = Paddle()
     
     poeng = 0
+    liv = 3
     
     pg.display.set_caption("Brick Break")
     
@@ -48,6 +49,10 @@ def main():
 
         oppdaterAlleBaller(baller,paddle)
         
+        if len(baller) == 0:
+            spawnBall(baller,paddle.x+paddle.bredde/2,paddle.y-12,vindu)
+            liv = livTavle(liv, vindu)
+        
         poeng = oppdaterKloss(klosser, baller, vindu, powerUps, poeng)
         
         paddle.tegnSelv(vindu)
@@ -55,7 +60,7 @@ def main():
         
         oppdaterPowerUps(powerUps, vindu)  
 
-        tegnPoengTavle(poeng, vindu)
+        Tavle(poeng, liv, vindu)
         
         # if framecounter % FPS == 0:
         #     print(poeng)

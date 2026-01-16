@@ -19,7 +19,7 @@ class Ball:
         self.sisteSprettX=0
         self.sisteSprettY=0
         self.spøkelse=False
-        self.spøkelsestart=0
+        self.spøkelsestart=-10000
         self.instaBreak=False
         baller.append(self)
 

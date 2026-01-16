@@ -17,3 +17,4 @@ def tegnPoengTavle(poeng, vindu):
     tekst = font.render(f'Poeng: {poeng}', False, (200, 200, 200))
     
     vindu.blit(tekst, (10, 10))
+

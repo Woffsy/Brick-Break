@@ -8,7 +8,7 @@ class Paddle():
         self.x = VINDU_BREDDE/2-self.bredde/2
         self.y = VINDU_HOYDE-50
         
-        self.fart = 5
+        self.fart = 8
         
         self.color = PADDLEFARGE
         

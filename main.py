@@ -36,6 +36,9 @@ def main():
                 running = False
             elif event.type == pg.KEYDOWN and event.key == pg.K_ESCAPE:
                 running = False
+            elif event.type == pg.KEYDOWN and event.key == pg.K_r:
+                running = False
+                main()
             elif event.type == pg.KEYDOWN and event.key == pg.K_SPACE:
                 spawnBall(baller,paddle.x+paddle.bredde/2,paddle.y-12,vindu)
 

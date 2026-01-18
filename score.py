@@ -8,28 +8,30 @@ gameOverFont = pg.font.SysFont("Arial", 96)
 
 def poengTavle(poeng, vindu):
     poeng += 1
-    tekst = font.render(f'Poeng: {poeng}', False, (200, 200, 200))
+    tekst = font.render(f'Poeng: {poeng}', False, WHITE)
     
     vindu.blit(tekst, (10, 10))
     
     return poeng
 
 def Tavle(poeng, liv, vindu):
-    tekst = font.render(f'Poeng: {poeng}', False, (255, 255, 255))
-    tekstLiv = font.render(f"Liv: {liv}", False, (255, 255, 255))
+    tekst = font.render(f'Poeng: {poeng}', False, WHITE)
+    tekstLiv = font.render(f"Liv: {liv}", False, WHITE)
     
     vindu.blit(tekst, (10, 10))
     vindu.blit(tekstLiv, (VINDU_BREDDE-60, 10))
     
     if liv == 0:
-        gameOverTekst = gameOverFont.render("Game Over", False, (255, 255, 255))
+        gameOverTekst = gameOverFont.render("Game Over", False, WHITE)
+        restartSpillTekst = font.render("Trykk R for å starte på nytt", False, WHITE)
         
         vindu.blit(gameOverTekst, (46, VINDU_HOYDE/2-48))
+        vindu.blit(restartSpillTekst, (150, VINDU_HOYDE/2+50))
         
         
 def livTavle(liv, vindu):
     liv -= 1
-    tekstLiv = font.render(f"Liv: {liv}", False, (255, 255, 255))
+    tekstLiv = font.render(f"Liv: {liv}", False, WHITE)
     
     vindu.blit(tekstLiv, (VINDU_BREDDE-60, 10))
     

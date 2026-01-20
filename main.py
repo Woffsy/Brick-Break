@@ -7,6 +7,7 @@ from powerups import *
 from score import *
 
 pg.init()
+pg.display.set_caption("Brick Break")
 
 vindu = pg.display.set_mode((VINDU_BREDDE, VINDU_HOYDE))
 clock = pg.time.Clock()
@@ -21,9 +22,7 @@ def main():
     
     poeng = 0
     liv = 3
-    
-    pg.display.set_caption("Brick Break")
-    
+        
     lagKlosser(klosser, vindu) 
     
     Ball(VINDU_BREDDE/2,VINDU_HOYDE-62,baller,vindu)

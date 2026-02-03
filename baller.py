@@ -33,9 +33,14 @@ class Ball:
     def oppdater(self,paddle):
         self.x+=self.vx
         self.y+=self.vy
-        if self.x-self.størrelse<=0 or self.x+self.størrelse>=VINDU_BREDDE:
+        if self.x-self.størrelse<0:
+            self.x=self.størrelse
             self.vx*=-1
-        if self.y-self.størrelse<=0:
+        elif self.x+self.størrelse>VINDU_BREDDE:
+            self.x = VINDU_BREDDE-self.størrelse
+            self.vx*=-1
+        if self.y-self.størrelse<0:
+            self.y = self.størrelse
             self.vy*=-1
         if self.y-self.størrelse>VINDU_HOYDE:
             self.kill()
